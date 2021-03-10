@@ -1,4 +1,4 @@
-# Emotions Detection for NLP
+# Emotions Detection for NLP ❤️
 
 **Emotions dataset for NLP classification tasks.**
 Dataset Link: https://www.kaggle.com/praveengovi/emotions-dataset-for-nlp
