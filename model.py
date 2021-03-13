@@ -75,7 +75,7 @@ print("Cleaning is done...")
 print("Data preprocessing is started....")
 xtrain = train['text']
 xtest = test['text']
-xval = val['title']
+xval = val['text']
 
 train['sentiment'] = train['sentiment'].replace({'joy':0,'anger':1,'love':2,'sadness':3,'fear':4,'surprise':5})
 test['sentiment'] = test['sentiment'].replace({'joy':0,'anger':1,'love':2,'sadness':3,'fear':4,'surprise':5})
