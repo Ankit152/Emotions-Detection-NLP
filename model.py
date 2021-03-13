@@ -4,6 +4,7 @@ import pandas as pd
 import string
 import re
 import nltk
+import seaborn as sns
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -14,8 +15,6 @@ from keras.utils import to_categorical
 from keras.layers import Dense, Embedding, LSTM, Bidirectional, Dropout
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report
-import scikitplot
-from scikitplot.metrics import plot_confusion_matrix
 
 print("All the modules imported....")
 
@@ -147,3 +146,11 @@ plt.ylabel("LOSS")
 plt.legend(loc='upper right')
 plt.savefig('loss.jpg')
 print("Figures saved in the disk....")
+
+# testing the model
+print("Testing the model....")
+print("The result obtained is...\n")
+model.evaluate(xtest,ytest)
+
+
+
