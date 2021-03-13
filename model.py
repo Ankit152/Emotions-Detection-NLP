@@ -73,9 +73,9 @@ print("Cleaning is done...")
 
 # dividing the data into input and output
 print("Data preprocessing is started....")
-xtrain = train['text']
-xtest = test['text']
-xval = val['text']
+xtrain = train['text'].values
+xtest = test['text'].values
+xval = val['text'].values
 
 train['sentiment'] = train['sentiment'].replace({'joy':0,'anger':1,'love':2,'sadness':3,'fear':4,'surprise':5})
 test['sentiment'] = test['sentiment'].replace({'joy':0,'anger':1,'love':2,'sadness':3,'fear':4,'surprise':5})
@@ -91,9 +91,9 @@ yval = to_categorical(yval)
 # converting to text to sequences
 tokenizer=Tokenizer(15212,lower=True,oov_token='UNK')
 tokenizer.fit_on_texts(xtrain)
-xtrain = tokenizer.text_to_sequence(xtrain)
-xtest = tokenizer.text_to_sequence(xtest)
-xval = tokenizer.text_to_sequence(xval)
+xtrain = tokenizer.texts_to_sequences(xtrain)
+xtest = tokenizer.texts_to_sequences(xtest)
+xval = tokenizer.texts_to_sequences(xval)
 
 xtrain = pad_sequences(xtrain,maxlen=80,padding='post')
 xtest = pad_sequences(xtest,maxlen=80,padding='post')
