@@ -116,12 +116,17 @@ model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accurac
 print("Model making done....")
 print(model.summary())
 
+
+# fitting it into the data
+print("Running the model....")
 hist = model.fit(xtrain,ytrain,epochs=15,validation_data=(xval,yval))
 
 print("Saving the model into the disk....")
 model.save('emotions.h5')
 print("Model saved into the disk....")
 
+
+# plotting the figures
 print("Plotting the figures....")
 plt.figure(figsize=(15,10))
 plt.plot(hist.history['accuracy'],c='b',label='train')
